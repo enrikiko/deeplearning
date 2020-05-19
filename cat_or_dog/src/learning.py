@@ -12,7 +12,7 @@ from werkzeug.utils import secure_filename
 
 # Set IA
 STEPS = 8000
-EPOCHS = 25
+EPOCHS = 3  #∞25
 VALIDATION_STEPS = 8000
 
 # Initialising the CNN

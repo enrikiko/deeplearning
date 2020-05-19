@@ -8,7 +8,7 @@ from keras.preprocessing import image
 import numpy as np
 import os
 from flask import Flask, render_template, request, send_from_directory
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 
 # Set IA
 STEPS = 8000

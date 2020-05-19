@@ -1,5 +1,4 @@
 FROM ubuntu
-#COPY sources.list /etc/apt/sources.list
 RUN apt update
 RUN apt-get update
 RUN apt install -y curl
@@ -22,5 +21,4 @@ RUN curl https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P16-Con
 RUN unzip zip.zip
 RUN cp -r Convolutional_Neural_Networks/dataset ./
 RUN rm -r zip.zip Convolutional_Neural_Networks/ __MACOSX/
-CMD sleep infinitely
-# CMD python learning.py
+CMD python3 learning.py

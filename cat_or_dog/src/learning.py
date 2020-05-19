@@ -11,9 +11,9 @@ from flask import Flask, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 
 # Set IA
-STEPS = 8000
-EPOCHS = 3  #∞25
-VALIDATION_STEPS = 8000
+STEPS = 800
+EPOCHS = 5  #∞25
+VALIDATION_STEPS = 800
 
 # Initialising the CNN
 classifier = Sequential()

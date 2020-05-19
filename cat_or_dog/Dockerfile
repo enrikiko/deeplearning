@@ -1,5 +1,5 @@
-FROM ubuntu:18.04
-COPY sources.list /etc/apt/sources.list
+FROM ubuntu
+#COPY sources.list /etc/apt/sources.list
 RUN apt update
 RUN apt-get update
 RUN apt install -y curl

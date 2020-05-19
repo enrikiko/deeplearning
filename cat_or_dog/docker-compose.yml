@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  cnn:
+    container_name: cnn
+    restart: on-failure
+    build: .
+    ports:
+    - "8787:3000"

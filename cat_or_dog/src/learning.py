@@ -76,7 +76,7 @@ def catordog(imageName):
     elif result[0][0] == 0:
         prediction = 'cat'
     else:
-        prediction = None
+        prediction = "None"
     print(str(result[0][0]))
     return prediction
 

@@ -67,19 +67,19 @@ classifier.fit_generator(training_set,
 
 # Part 3 - Making new predictions
 
-def catordog(imageName):
-    test_image = image.load_img(imageName, target_size=(64, 64))
-    test_image = image.img_to_array(test_image)
-    test_image = np.expand_dims(test_image, axis=0)
-    result = classifier.predict(test_image)
-    # training_set.class_indices
-    if result[0][0] == 1:
-        prediction = 'dog'
-    elif result[0][0] == 0:
-        prediction = 'cat'
-    else:
-        prediction = result[0][0]
-    return prediction
+# def catordog(imageName):
+#     test_image = image.load_img(imageName, target_size=(64, 64))
+#     test_image = image.img_to_array(test_image)
+#     test_image = np.expand_dims(test_image, axis=0)
+#     result = classifier.predict(test_image)
+#     # training_set.class_indices
+#     if result[0][0] == 1:
+#         prediction = 'dog'
+#     elif result[0][0] == 0:
+#         prediction = 'cat'
+#     else:
+#         prediction = repr(result[0][0])
+#     return prediction
 
 
 print(catordog("dataset/single_prediction/cat_or_dog_1.jpg"))
@@ -92,7 +92,19 @@ def upload_file():
     f = request.files['file']
     print("Filename:" + f.filename)
     f.save(secure_filename(f.filename))
-    return catordog(f.filename)
+    #return catordog(f.filename)
+    test_image = image.load_img(f.filename, target_size=(64, 64))
+    test_image = image.img_to_array(test_image)
+    test_image = np.expand_dims(test_image, axis=0)
+    result = classifier.predict(test_image)
+    # training_set.class_indices
+    if result[0][0] == 1:
+        prediction = 'dog'
+    elif result[0][0] == 0:
+        prediction = 'cat'
+    else:
+        prediction = repr(result[0][0])
+    return prediction
     # return 'file uploaded successfullyd'
 
 

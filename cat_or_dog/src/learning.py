@@ -11,8 +11,8 @@ from flask import Flask, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 
 # Set IA
-STEPS = 1000 #8000
-EPOCHS = 1  #25
+STEPS = 50 #8000
+EPOCHS = 5  #25
 VALIDATION_STEPS = 80 #2000
 
 app = Flask(__name__)
@@ -82,8 +82,8 @@ classifier.fit_generator(training_set,
 #     return prediction
 
 
-print(catordog("dataset/single_prediction/cat_or_dog_1.jpg"))
-print(catordog("dataset/single_prediction/cat_or_dog_2.jpg"))
+#print(catordog("dataset/single_prediction/cat_or_dog_1.jpg"))
+#print(catordog("dataset/single_prediction/cat_or_dog_2.jpg"))
 
 print("line 89")
 

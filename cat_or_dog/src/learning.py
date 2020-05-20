@@ -11,7 +11,7 @@ from flask import Flask, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 
 # Set IA
-STEPS = 50 #8000
+STEPS = 500 #8000
 EPOCHS = 5  #25
 VALIDATION_STEPS = 80 #2000
 

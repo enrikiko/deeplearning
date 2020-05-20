@@ -15,6 +15,8 @@ STEPS = 100 #8000
 EPOCHS = 1  #25
 VALIDATION_STEPS = 80 #2000
 
+app = Flask(__name__)
+
 # Initialising the CNN
 classifier = Sequential()
 
@@ -76,15 +78,12 @@ def catordog(imageName):
     elif result[0][0] == 0:
         prediction = 'cat'
     else:
-        prediction = "None"
-    print(str(result[0][0]))
+        prediction = result[0][0]
     return prediction
 
 
 print(catordog("dataset/single_prediction/cat_or_dog_1.jpg"))
 print(catordog("dataset/single_prediction/cat_or_dog_2.jpg"))
-
-app = Flask(__name__)
 
 print("line 89")
 

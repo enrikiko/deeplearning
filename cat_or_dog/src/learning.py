@@ -11,9 +11,9 @@ from flask import Flask, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 
 # Set IA
-STEPS = 80
-EPOCHS = 1  #∞25
-VALIDATION_STEPS = 80
+STEPS = 100 #8000
+EPOCHS = 1  #25
+VALIDATION_STEPS = 80 #2000
 
 # Initialising the CNN
 classifier = Sequential()
@@ -33,7 +33,7 @@ classifier.add(Flatten())
 
 # Step 4 - Full connection
 classifier.add(Dense(units=128, activation='relu'))
-classifier.add(Dense(units=1, activation='linear'))
+classifier.add(Dense(units=1, activation='sigmoid'))
 
 # Compiling the CNN
 classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
@@ -78,7 +78,7 @@ def catordog(imageName):
     else:
         prediction = None
     print(str(result[0][0]))
-    return str(result[0][0])
+    return prediction
 
 
 print(catordog("dataset/single_prediction/cat_or_dog_1.jpg"))

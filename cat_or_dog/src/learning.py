@@ -11,9 +11,9 @@ from flask import Flask, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
 
 # Set IA
-STEPS = 5000 #8000
-EPOCHS = 5  #25
-VALIDATION_STEPS = 80 #2000
+STEPS = 5 #8000
+EPOCHS = 2  #25
+VALIDATION_STEPS = 2 #2000
 
 app = Flask(__name__)
 
@@ -104,7 +104,7 @@ def upload_file():
         prediction = 'cat'
     else:
         prediction = repr(result[0][0])
-    return prediction
+    return  repr(result[0][0])
     # return 'file uploaded successfullyd'
 
 

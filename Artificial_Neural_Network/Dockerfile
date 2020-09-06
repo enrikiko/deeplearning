@@ -15,6 +15,7 @@ RUN git clone https://github.com/enrikiko/deeplearning
 WORKDIR deeplearning/Artificial_Neural_Network
 COPY init.py init.py
 COPY Churn_Modelling.csv Churn_Modelling.csv
+RUN git pull
 CMD sleep infinity
 # RUN apt install -y curl
 # RUN apt-get install tree

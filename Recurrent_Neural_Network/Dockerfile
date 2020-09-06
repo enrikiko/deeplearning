@@ -7,7 +7,9 @@ RUN pip3 install pillow Flask Werkzeug matplotlib pandas sklearn tensorflow Thea
 RUN pip3 install --upgrade keras
 RUN updatedb
 RUN mkdir /src/
+COPY ./dataset/ /src/
+COPY ./src/init.py /src/
+RUN updatedb
 WORKDIR /src/
-RUN curl https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P16-Self-Organizing-Maps.zip --output zip.zip
-RUN unzip zip.zip
-CMD python3 learning.py
+CMD python3 init.sh
+#ENTRYPOINT ["./init.sh"]

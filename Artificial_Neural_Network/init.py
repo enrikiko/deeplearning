@@ -1,5 +1,5 @@
-from joke import save
-from request import sendHttp
+#from joke import save
+#from request import sendHttp
 import time
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,7 +8,7 @@ import pandas as pd
 startDate={ "Start" : time.time(),
     "Version" : "4init.py" }
 
-sendHttp(startDate)
+#sendHttp(startDate)
 
 # Importing the dataset
 dataset = pd. read_csv('Churn_Modelling.csv')
@@ -60,7 +60,7 @@ parameters = {
 'neuronP' : [6, 7]
 }
 
-sendHttp(parameters)
+#sendHttp(parameters)
 
 grid_search = GridSearchCV(estimator = classifier,
 param_grid = parameters,
@@ -74,7 +74,7 @@ print(best_accuracy)
 final={ "best_parameters" : best_parameters,
         "best_accuracy" : best_accuracy,
         "Finish" : time.time()       }
-sendHttp(final)
+#sendHttp(final)
 save(str(parameters))
 save(str(best_parameters))
 save(str(best_accuracy))

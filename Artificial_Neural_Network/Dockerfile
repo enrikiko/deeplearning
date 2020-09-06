@@ -1,21 +1,19 @@
-FROM ubuntu:18.04
+FROM ubuntu
 RUN apt-get update
 RUN apt update
-RUN apt install -y python3-pip
-RUN pip3 install tensorflow
+RUN apt install -y curl python3-pip
+RUN apt-get install -y tree locate unzip vim
+RUN pip3 install pillow Flask Werkzeug matplotlib pandas sklearn tensorflow Theano Flask
 RUN pip3 install --upgrade keras
-RUN pip3 install Theano
-RUN pip3 install pillow
-RUN pip3 install Werkzeug
-RUN pip3 install Flask
-RUN apt-get install locate
-RUN apt install -y git
 RUN updatedb
-RUN git clone https://github.com/enrikiko/deeplearning
+RUN mkdir -p deeplearning/Artificial_Neural_Network
 WORKDIR deeplearning/Artificial_Neural_Network
 COPY init.py init.py
+COPY joke.py joke.py
+COPY request.py request.py
 COPY Churn_Modelling.csv Churn_Modelling.csv
-RUN git pull
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 CMD sleep infinity
 # RUN apt install -y curl
 # RUN apt-get install tree

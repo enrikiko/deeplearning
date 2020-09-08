@@ -1,6 +1,6 @@
 FROM python:3
 RUN pip3 install requests pillow Flask Werkzeug matplotlib pandas sklearn tensorflow Theano
-RUN pip3 install --upgrade keras
+#RUN pip3 install --upgrade keras
 RUN mkdir -p deeplearning/Artificial_Neural_Network
 WORKDIR deeplearning/Artificial_Neural_Network
 COPY src/init.py init.py

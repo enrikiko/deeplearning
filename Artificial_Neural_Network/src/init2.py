@@ -1,5 +1,5 @@
-#from joke import save
-#from request import sendHttp
+from functions import save
+from functions import sendHttp
 import time
 import numpy as np
 import matplotlib.pyplot as plt

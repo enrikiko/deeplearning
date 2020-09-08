@@ -1,11 +1,7 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt update
-RUN apt install -y curl python3-pip
+FROM python:3
 RUN apt-get install -y tree locate unzip vim
 RUN pip3 install pillow Flask Werkzeug matplotlib pandas sklearn tensorflow Theano Flask
 RUN pip3 install --upgrade keras
-RUN updatedb
 RUN mkdir /src/
 COPY ./dataset/ /src/
 COPY ./src/init.py /src/

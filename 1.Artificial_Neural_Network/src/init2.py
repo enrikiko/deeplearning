@@ -20,10 +20,12 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelencoder_x_1 = LabelEncoder()
 labelencoder_x_2 = LabelEncoder()
 
-x[:, 1] = labelencoder_x_1.fit_transform(x[:, 1]) #convert Srtring to Number
+# Convert Srtring to Number
+x[:, 1] = labelencoder_x_1.fit_transform(x[:, 1])
 x[:, 2] = labelencoder_x_2.fit_transform(x[:, 2])
 
-onehotencoder = OneHotEncoder(categorical_features = [1], handle_unknown='ignore', dtype=np.integer) #encode dumy parameters
+# Encode dumy parameters
+onehotencoder = OneHotEncoder(categorical_features = [1], handle_unknown='ignore', dtype=np.integer)
 x = onehotencoder.fit_transform(x).toarray()
 x = x[:, 1:]
 

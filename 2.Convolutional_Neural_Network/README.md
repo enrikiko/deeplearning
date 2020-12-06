@@ -1,6 +1,9 @@
 # Convolutional Neural Network
 
 ## Description
+1. Create **Convolutional Neural Network**
+2. Training **CNN**
+3. Predict simple example
 
 ## How to run it
 

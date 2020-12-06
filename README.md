@@ -1,4 +1,4 @@
-# deeplearning
+# Deeplearning
 
 ## Index
 - [Artificial Neural Network](1.Artificial_Neural_Network/README.md)
